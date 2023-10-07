@@ -58,7 +58,7 @@ ROOT_URLCONF = 'celery_file_handler.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'file_upload_app/templates/file_upload_app')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

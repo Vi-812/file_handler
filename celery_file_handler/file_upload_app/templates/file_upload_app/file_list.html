@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список файлов</title>
+</head>
+<body>
+<h1>Список файлов</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Файл</th>
+        <th>Дата загрузки</th>
+        <th>Обработан</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for file in files %}
+    <tr>
+        <td>{{ file.id }}</td>
+        <td>{{ file.file}}</td>
+        <td>{{ file.uploaded_at }}</td>
+        <td>{{ file.processed }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">Нет загруженных файлов.</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<p>
+<a href="{% url 'ui-file-upload' %}">Загрузить файл</a>
+<p>
+<a href="{% url 'ui-index' %}">Главная страница</a>
+</body>
+</html>

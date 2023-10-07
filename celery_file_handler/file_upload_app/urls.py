@@ -3,6 +3,9 @@ from . import views
 
 
 urlpatterns = [
-    path('upload/', views.file_upload_view, name='file-upload'),
-    path('files/', views.file_list_view, name='file-list'),
+    path('', views.index_view, name='ui-index'),
+    path('upload_ui/', views.ui_file_upload_view, name='ui-file-upload'),
+    path('upload/', views.api_file_upload_view, name='api-file-upload'),
+    path('files_ui/', views.ui_file_list_view, name='ui-file-list'),
+    path('files/', views.api_file_list_view, name='api-file-list'),
 ]

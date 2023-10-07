@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузка файлов</title>
+</head>
+<body>
+<h1>Добро пожаловать в приложение для загрузки файлов</h1>
+<p>Пожалуйста, выберите действие:</p>
+<ul>
+    <li><a href="{% url 'ui-file-upload' %}">Загрузить новый файл</a></li>
+    <li><a href="{% url 'ui-file-list' %}">Просмотреть загруженные файлы</a></li>
+</ul>
+{% if answer %}
+<p>Ответ: {{ answer }}</p>
+{% endif %}
+</body>
+</html>

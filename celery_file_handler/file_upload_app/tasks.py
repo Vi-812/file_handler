@@ -6,9 +6,8 @@ from .models import File
 def process_file(file_id):
     try:
         file = File.objects.get(pk=file_id)
-        # Здесь можно выполнить обработку файла
-        # Например, что-то сделать с file.file.path
+        # Обработка файла
         file.processed = True
         file.save()
     except File.DoesNotExist:
-        pass  # Обработка ошибки, если файл не найден
+        pass  # Обработка ошибки
