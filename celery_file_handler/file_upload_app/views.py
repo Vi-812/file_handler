@@ -24,7 +24,7 @@ def process_file_upload(uploaded_file):
         if file_serializer.is_valid():
             file_serializer.save()
             file_instance = file_serializer.instance
-            # process_file.delay(file_instance.id)
+            process_file.delay(file_instance.id)
             return file_serializer.data
         else:
             error_message = f"Ошибка загрузки файла. Дополнительные данные: {file_serializer.errors}"
